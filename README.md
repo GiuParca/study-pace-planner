@@ -1,6 +1,6 @@
-#StudyPace Planner App
+<h1>StudyPace Planner App</h1>
 
-#### StudyPace Planner is a React application designed to help users manage their study tasks efficiently, built using TypeScript and Create React App.
+<h3>StudyPace Planner is a React application designed to help users manage their study tasks efficiently, built using TypeScript and Create React App.</h3>
 
 <em><b>Features:</b></em>
 - Task Management: Users can add, edit, and delete study tasks.
