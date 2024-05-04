@@ -2,6 +2,10 @@ import React from "react";
 import Button from "../Button";
 import style from './Form.module.scss';
 
+interface Props {
+    text: string;
+}
+
 function Form() {
     return (
         <form className={style.newTask}>
@@ -31,10 +35,11 @@ function Form() {
                     required
                 />
             </div>
-            <Button />
+            <Button 
+                text="Add"
+            />
         </form>
     )
 }
-
 
 export default Form;
