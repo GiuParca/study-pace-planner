@@ -3,12 +3,12 @@ import style from './Button.module.scss';
 
 interface ButtonProps {
     text?: string;
-    type?: "button" | "submit" | "reset" | undefined,
-    onClick?: () => void,
-    children?: React.ReactNode
+    type?: "button" | "submit" | "reset";
+    onClick?: () => void;
+    children?: React.ReactNode;
 }
 
-function Button({ onClick, type, text, children }: ButtonProps) {
+function Button({ onClick, type = "button", text, children }: ButtonProps) {
     return (
         <button onClick={onClick} type={type} className={style.botao}>
             {text}
