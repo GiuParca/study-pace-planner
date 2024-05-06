@@ -3,8 +3,7 @@ import style from './Button.module.scss';
 
 interface ButtonProps {
     text?: string;
-    type?: "button" | "submit" | "reset";
-    onClick?: () => void;
+    type?: "button" | "submit" | "reset"| undefined, onClick?: () => void;
     children?: React.ReactNode;
 }
 

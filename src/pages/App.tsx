@@ -12,9 +12,25 @@ function App() {
     function selectTask(taskSelected: ITask) {
         setSelected(taskSelected);
         setTasks(previousTasks => previousTasks.map(tasks => ({
-          ...tasks, 
-          selected: tasks.id === taskSelected.id? true : false
+            ...tasks,
+            selected: tasks.id === taskSelected.id ? true : false
         })))
+    }
+
+    function completeTask() {
+        if (selected) {
+            setTasks(previousTasks => previousTasks.map(task => {
+                if (task.id === selected.id) {
+                    setSelected(undefined);
+                    return {
+                        ...task,
+                        selected: false,
+                        completed: true
+                    }
+                }
+                return task;
+            }))
+        }
     }
 
     return (
@@ -24,7 +40,9 @@ function App() {
                 tasks={tasks}
                 selectTask={selectTask}
             />
-            <Timer selected={selected}/>
+            <Timer
+                selected={selected}
+                completeTask={completeTask} />
         </div>
     );
 }
