@@ -10,7 +10,7 @@ interface Props {
 function List({ tasks, selectTask }: Props) { 
     return (
         <aside className={style.listTasks}>
-            <h2>To Do List</h2>
+            <h2>TO DO LIST</h2>
             <ul>
                 {tasks.map(item => (
                     <Item 

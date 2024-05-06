@@ -31,7 +31,7 @@ function Timer({ selected, completeTask }: Props) {
 
     return (
         <div className={style.timer}>
-            <p className={style.title}>Choose a card, start the timer</p>
+            <p className={style.title}>Select a card and start the timer</p>
             <div className={style.clockWrapper}>
                 <Clock time={time} />
             </div>

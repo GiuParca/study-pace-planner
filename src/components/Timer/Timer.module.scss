@@ -11,7 +11,7 @@
       box-shadow: 2px 4px 4px #0000009F;
       box-sizing: border-box;
       display: flex;
-      font-size: 5rem;
+      font-size: 4rem;
       justify-content: center;
       margin-bottom: 24px;
       padding: 16px 12px;
@@ -19,7 +19,9 @@
     }
   
     .title {
-      font-size: 2rem;
+      font-size: 1.8rem;
+      margin-top: 30px;
+      margin-bottom: 10px;
     }
   
     button {
@@ -28,9 +30,10 @@
       box-shadow: 2px 4px 4px #0000009F;
       color: #272626;
       cursor: pointer;
-      font-size: 1.25rem;
-      padding: 16px;
-      width: 150px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      padding: 5px;
+      width: 80px;
       
       &:active {
         background-color: #7CA6B7;
@@ -42,11 +45,7 @@
     @media screen and (min-width:1280px) {
       
       .clockWrapper{
-        font-size: 15rem;
-      }
-  
-      p {
-        font-size: 2rem;
+        font-size: 10rem;
       }
   
       button {

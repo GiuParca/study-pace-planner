@@ -9,33 +9,26 @@ interface Props {
 }
 
 function Form({ setTasks }: Props) {
-    const [formData, setFormData] = useState({
-        task: "",
-        time: "00:00"
-    });
+    const [task, setTask] = useState("");
+    const [time, setTime] = useState("00:00")
 
-    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = event.target;
-        setFormData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
-    };
 
-    const addTask = (event: React.FormEvent<HTMLFormElement>) => {
+    function addTask(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
         setTasks(oldTasks => 
             [...oldTasks,
                 { 
-                    task: formData.task,
-                    time: formData.time,
+                    task,
+                    time,
                     selected: false,
                     completed: false,
                     id: uuidv4()
                 }
             ]
         );
-        setFormData({ task: "", time: "00:00" }); 
+
+        setTask("");
+        setTime("00:00");
     };
 
     return (
@@ -48,8 +41,8 @@ function Form({ setTasks }: Props) {
                     type="text"
                     name="task"
                     id="task"
-                    value={formData.task}
-                    onChange={handleInputChange}
+                    value={task}
+                    onChange={event => setTask(event.target.value)}
                     placeholder="Create a task"
                     required
                 />
@@ -62,8 +55,8 @@ function Form({ setTasks }: Props) {
                     type="time"
                     step="1"
                     name="time"
-                    value={formData.time}
-                    onChange={handleInputChange}
+                    value={time}
+                    onChange={event => setTime(event.target.value)}
                     id="time"
                     min="00:00:00"
                     max="23:59:00"

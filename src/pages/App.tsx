@@ -5,6 +5,7 @@ import Timer from '../components/Timer';
 import style from './App.module.scss';
 import { ITask } from '../types/tasks';
 
+
 function App() {
     const [tasks, setTasks] = useState<ITask[]>([]);
     const [selected, setSelected] = useState<ITask>();
